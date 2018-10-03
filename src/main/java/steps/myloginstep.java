@@ -5,6 +5,9 @@ package steps;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getPages;
+
+import java.util.List;
+
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver;
 import pages.myloginpage;
 
@@ -16,6 +19,7 @@ public class myloginstep {
 	private myloginpage loginpage;
 	private String baseurl;
 	private String webtabledata;
+	private String webtableList;
 	
 	
 	
@@ -39,10 +43,9 @@ public class myloginstep {
 	{
 		webtabledata= loginpage.getwebtableproductdesc();
 		System.out.println(webtabledata);
-		//webtabledata= loginpage.getwebtableproductdetails();
-		//System.out.println(webtabledata);
-		webtabledata= loginpage.getwebtableallproductdesc();
-		System.out.println(webtabledata);
+
+		webtableList= loginpage.getwebtableallproductdesc();
+		System.out.println(webtableList);
 		
 	}
 	

@@ -5,6 +5,8 @@ import net.serenitybdd.core.pages.PageObject;
 import java.util.Arrays;
 import java.util.List;
 
+
+
 import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
@@ -34,7 +36,7 @@ public void openloginpage()
 	private WebElementFacade webtableproductdesc;
 
 	@FindBy(xpath="//a[@class='TrackLink']")
-	private WebElementFacade webtableproductalldesc;
+	private List <WebElementFacade> webtableproductalldesc;
 	
 	@FindBy(xpath="//span[@class='ProductPrice']")
 	private WebElementFacade webtableproductallprice;
@@ -46,10 +48,22 @@ public void openloginpage()
 		return webtableproductdesc.getTextValue();
 	}
 	
-	public String getwebtableallproductdesc() {
-		String prodDetails = webtableproductalldesc.getValue();
-		return prodDetails;
-	}
+	
+	 public String getwebtableallproductdesc() {
+		 List<WebElementFacade> webtableproductalldesc = findAll("//a[@class='TrackLink']");
+		 return webtableproductalldesc.get(2).getText();
+		 }
+	
+	//public String getwebtableallproductdesc() {
+		
+		//return webtableproductalldesc.get(2);
+		//List <WebElementFacade> allproductdesc = findAll(By.xpath("//a[@class='TrackLink']"));
+		//System.out.println(allproductdesc.get(2));
+		//return extract(allproductdesc, on(WebElement.class).getText());
+		
+		//List<WebElementFacade> tabs = findAll("//div[@id='tabs']//a");
+	    //return extract(tabs, on(WebElement.class).getText());
+	//}
 
 	public void searchproduct(String arg1) {
 		// TODO Auto-generated method stub
