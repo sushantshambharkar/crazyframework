@@ -22,6 +22,8 @@ public void openloginpage()
 	{
 		open();
 	}
+
+
 	
 	@FindBy(id="search_query")
 	private WebElementFacade searchinput;
